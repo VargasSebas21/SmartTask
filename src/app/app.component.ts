@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from './services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front-end';
+
+  public isLoggedIn = false;
+
+  constructor(
+    private sharedService: SharedService
+  ) {
+      this.sharedService.getLoginData().subscribe((isLogged) => {
+        this.isLoggedIn = isLogged;
+      })
+  }
 }
