@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MedicalDiagnosisComponent } from './pages/medical-diagnosis/medical-diagnosis/medical-diagnosis.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserModule } from './pages/user-crud/user.module';
 
 
 @NgModule({
@@ -14,13 +15,17 @@ import { MedicalDiagnosisComponent } from './pages/medical-diagnosis/medical-dia
     AppComponent,
     LoginComponent,
     SideBarComponent,
-    MedicalDiagnosisComponent,
+  
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

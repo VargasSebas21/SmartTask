@@ -19,6 +19,10 @@ export class LoginComponent {
     private sharedService: SharedService
   ) {
     this.formGroup = this.loginFormService.getFormGroup();
+    if(authServiceService.isLogged()) {
+      this.sharedService.setLoginData(true);
+    }
+      
   }
 
   public onLogin() {

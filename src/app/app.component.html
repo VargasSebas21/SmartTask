@@ -1,14 +1,13 @@
-<ng-container  *ngIf="isLoggedIn">
+<div class="container"  *ngIf="isLoggedIn">
   <app-side-bar></app-side-bar>
   <router-outlet></router-outlet>
-</ng-container>
+</div>
 
   
-
-
 <ng-container  *ngIf="!isLoggedIn">
   <app-login></app-login>
 </ng-container>
+
 
 
 

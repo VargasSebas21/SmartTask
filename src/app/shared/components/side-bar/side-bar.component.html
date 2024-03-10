@@ -1,29 +1,41 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="/front-end/src/app/shared/components/side-bar/side-bar.component.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="/front-end/src/app/shared/components/side-bar/side-bar.component.css"
+/>
 
 <nav>
-    <ul>
-        <li>
-            <a href="#" class="logo">
-                <img src="./assets/img/logo.jpg" alt="Smartsoft Logo">
-                <span class="nav-item">SMARTSOFT</span>
-            </a>
-        </li>
-        <li><a href="#">
-                <i class="fas fa-home"></i>
-                <span class="nav-item">Home</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fas fa-chart-bar"></i>
-            <span class="nav-item">Dashboard</span>
-        </a></li>
-        <li><a href="#">
-             <i class="fas fa-plus-square"></i>
-            <span class="nav-item">CRUD</span>
-        </a></li>
-        <li><a href="#" class="logout">
-            <i class="fas fa-sign-out-alt"></i>
-            <span class="nav-item"></span>
-        </a></li>
-    </ul>
+  <ul>
+    <li>
+      <a href="#" class="logo">
+        <img src="./assets/img/logo.jpg" alt="Smartsoft Logo" />
+        <span class="nav-item">SMARTSOFT</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fas fa-home"></i>
+        <span class="nav-item">Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fas fa-chart-bar"></i>
+        <span class="nav-item">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fas fa-plus-square"></i>
+        <span class="nav-item">CRUD</span>
+      </a>
+    </li>
+    <li (click)="onLogout()"  class="logout" >
+        <i class="fas fa-sign-out-alt"></i>
+        <span class="nav-item"></span>
+    </li>
+  </ul>
 </nav>
