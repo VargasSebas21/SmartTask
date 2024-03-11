@@ -1,0 +1,17 @@
+<input type="file" (change)="onFileChange($event)" />
+
+<div>
+  <p-chart
+    width="200"
+    height="200"
+    type="doughnut"
+    [data]="data"
+    [options]="options"
+  ></p-chart>
+  <span>Highest death counts to date: {{ states[0]?.state }}</span>
+  <br />
+  <span
+    >Lowest death count to date:
+    {{ states[this.states.length - 1]?.state }}</span
+  >
+</div>

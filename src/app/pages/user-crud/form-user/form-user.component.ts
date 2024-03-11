@@ -3,6 +3,7 @@ import { FormService } from '../services/form.service';
 import { UserHttpService } from '../services/user-http.service';
 import { FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-form-user',
   templateUrl: './form-user.component.html',
@@ -12,45 +13,57 @@ import { FormGroup } from '@angular/forms';
 export class FormUserComponent implements OnInit {
   @Input() public user: any;
 
-  public formGroup! : FormGroup;
-  
+  public formGroup!: FormGroup;
+
   constructor(
     private formService: FormService,
     private userHttpService: UserHttpService
   ) {
     this.formGroup = this.formService.getFormGroup();
     console.log(this.user);
-    
-  
-  }
-public ngOnInit() {
-  if (this.user) {
-    this.formGroup.patchValue(this.user);
-  }
-}
 
-public onEdit() {
-  const user = {
-    id:this.user.id, 
-    ...this.formGroup.getRawValue()
+
   }
-  this.userHttpService.update(user).subscribe(
-    (data: any) => {
-      alert('User updated');
-      window.location.reload();
+  public ngOnInit() {
+    if (this.user) {
+      this.formGroup.patchValue(this.user);
     }
-  );
-}
+  }
 
+  /**
+   * Este metodo se encarga de editar un usuario
+   */
+  public onEdit() {
+    const user = {
+      id: this.user.id,
+      ...this.formGroup.getRawValue()
+    }
+    this.userHttpService.update(user).subscribe(
+      (data: any) => {
+        alert('User updated');
+        window.location.reload();
+      }
+    );
+  }
 
-public onSubmit() {
+  public onCloseModal() {
+    window.location.reload();
+
+  }
+
+  /*
+  * Este metodo se encarga de crear un usuario
+  */
+
+  public onSubmit() {
     this.userHttpService.create(this.formGroup.getRawValue()).subscribe(
       (data: any) => {
         alert('User created');
         window.location.reload();
       }
     );
-  
-    }
 
   }
+
+
+}

@@ -1,8 +1,10 @@
-
-
-<button class="btn-create" (click)="onOpenModal()" >button here</button>
-
-<p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
+<div class="root-table"><p-table [value]="users">
+    <ng-template pTemplate="caption">
+        <div class="align-content-center d-flex justify-content-between">
+            Products
+            <button class="btn btn-primary" (click)="onOpenModal()" >Add +</button>
+        </div>
+    </ng-template>
     <ng-template pTemplate="header">
         <tr>
             <th>Id</th>
@@ -20,7 +22,8 @@
             <td>{{ users.lastName }}</td>
             <td>{{ users.age }}</td>
             <td>{{ users.role }}</td>
-            <td><button (click)="onEdit(users)">Update</button><button (click)="onDelete(users.id)">Delete</button></td>
+            <td><button class="btn btn-primary" (click)="onEdit(users)">Update</button><button style="margin-left: 1rem;" class="btn btn-danger" (click)="onDelete(users.id)">Delete</button></td>
         </tr>
     </ng-template>
 </p-table>
+</div>

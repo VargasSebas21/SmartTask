@@ -41,6 +41,11 @@ export class ListUserComponent {
     modalRef.componentInstance.user = user;
   }
 
+  /**
+   * Elimina el usuario segun el id que se pase
+   * @param id id del usuario que se va a eliminar
+   */
+
   public onDelete(id: number) {
     this.userHttpService.delete(id).subscribe(
       (data: any) => {
@@ -48,5 +53,9 @@ export class ListUserComponent {
         window.location.reload();
       }
     );
+  }
+
+  public onCloseModal() {
+    this.modalService.dismissAll();
   }
 }

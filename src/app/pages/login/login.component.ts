@@ -25,6 +25,10 @@ export class LoginComponent {
       
   }
 
+/**
+ * Este metodo se encarga de hacer el login falso por medio del servicio de autenticacion
+ */
+
   public onLogin() {
     if (this.formGroup.valid && this.authServiceService.login(this.formGroup.getRawValue())) {
       this.sharedService.setLoginData(true);
